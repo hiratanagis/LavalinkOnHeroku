@@ -3,17 +3,7 @@ const fs = require('fs')
 const https = require('https')
 
 const http = require('http');
-const express = require('express');
-const app = express();
-var server = require('http').createServer(app);
-app.get("/", (request, response) => {
-//  console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
-});
-app.use(express.static("public"));
-const listener = server.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+
 setInterval(() => {
   http.get(`http://riyuka-senpai.herokuapp.com`);
 }, 280000);
